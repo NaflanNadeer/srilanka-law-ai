@@ -1,9 +1,28 @@
+import Sidebar from "../../components/Sidebar";
+import Header from "../../components/Header";
+import ChatWindow from "../../components/ChatWindow";
+import ChatInput from "../../components/ChatInput";
+
+
 export default function Home() {
+
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gray-100">
-      <h1 className="text-5xl font-bold text-blue-600">
-        Sri Lanka Law AI
-      </h1>
+
+    <main className="flex min-h-screen">
+
+      <Sidebar />
+
+      <section className="flex flex-1 flex-col">
+
+        <Header />
+
+        <ChatWindow />
+
+        <ChatInput />
+
+      </section>
+
     </main>
+
   );
 }
