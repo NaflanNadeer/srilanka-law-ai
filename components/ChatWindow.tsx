@@ -1,21 +1,35 @@
+"use client";
+
 import MessageBubble from "./MessageBubble";
+import { Message } from "../types/chat";
 
 
-export default function ChatWindow() {
+type Props = {
+  messages: Message[];
+};
+
+
+export default function ChatWindow({
+  messages,
+}: Props) {
+
 
   return (
-    <div className="flex-1 p-6">
 
-      <MessageBubble
-        role="ai"
-        message="Welcome. Ask me anything about Sri Lankan law."
-      />
+    <div className="flex-1 overflow-y-auto p-6">
 
-      <MessageBubble
-        role="user"
-        message="Can an employer terminate an employee without notice?"
-      />
+      {messages.map((message) => (
+
+        <MessageBubble
+          key={message.id}
+          role={message.role}
+          message={message.content}
+        />
+
+      ))}
 
     </div>
+
   );
+
 }

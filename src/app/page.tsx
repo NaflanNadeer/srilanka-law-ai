@@ -1,10 +1,21 @@
+
+"use client";
+
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
 import ChatWindow from "../../components/ChatWindow";
 import ChatInput from "../../components/ChatInput";
+import { useChat } from "../../hooks/useChat";
+
 
 
 export default function Home() {
+
+  const {
+    messages,
+    sendMessage,
+  } = useChat();
+
 
   return (
 
@@ -12,17 +23,26 @@ export default function Home() {
 
       <Sidebar />
 
+
       <section className="flex flex-1 flex-col">
 
         <Header />
 
-        <ChatWindow />
 
-        <ChatInput />
+        <ChatWindow
+          messages={messages}
+        />
+
+
+        <ChatInput
+          onSend={sendMessage}
+        />
 
       </section>
+
 
     </main>
 
   );
+
 }
