@@ -1,4 +1,4 @@
-import { openai } from "../lib/openai"
+import { openai } from "../../lib/openai"
 
 export async function generateChatResponse(message: string) {
   const response = await openai.responses.create({

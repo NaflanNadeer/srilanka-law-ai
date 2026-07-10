@@ -1,11 +1,11 @@
 
 "use client";
 
-import Sidebar from "../../components/Sidebar";
-import Header from "../../components/Header";
-import ChatWindow from "../../components/ChatWindow";
-import ChatInput from "../../components/ChatInput";
-import { useChat } from "../../hooks/useChat";
+import Sidebar from "../../components/layout/Sidebar";
+import Header from "../../components/layout/Header";
+import ChatWindow from "../../chat/components/ChatWindow";
+import ChatInput from "../../chat/components/ChatInput";
+import { useChat } from "../../chat/hooks/useChat";
 
 
 
